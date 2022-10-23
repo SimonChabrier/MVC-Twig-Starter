@@ -1,0 +1,21 @@
+{
+    "name": "simonchabrier/sqli-test",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Simon Chabrier",
+            "email": "simonchabrier@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    },
+    "require": {
+        "twig/twig": "^3.4",
+        "symfony/routing": "^5.4"
+    }
+}

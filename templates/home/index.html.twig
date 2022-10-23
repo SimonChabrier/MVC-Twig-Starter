@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home Template{% endblock %}
+
+{% block body %}
+<h1>findAll from HomeController</h1>
+<ul>
+    {% for user in users %}
+        <li>{{ user.firstname }}</li>
+        <li>{{ user.lastname }}</li>
+        <li>{{ user.username }}</li>
+        <li>{{ user.email }}</li>
+    {% endfor %}
+</ul>
+
+<h1>findById from HomeController</h1>
+<ul>
+<li>{{ user.firstname }}</li>
+<li>{{ user.lastname }}</li>
+</ul>
+{% endblock %}
