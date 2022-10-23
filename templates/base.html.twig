@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block stylesheets %}<link rel="stylesheet" href="#">{% endblock %}
+    {% block stylesheets %}<link rel="stylesheet" href="assets/styles/style.css">{% endblock %}
     {% block javascript %}<script src="#" defer></script>{% endblock %}
     <title>{% block title %}Base template{% endblock %}</title>
 </head>
 
 <body>
 {% include "/fragments/_header.html.twig" %}
-
-{% block body %}
-    
-{% endblock %}
-
+<div class="main">
+    {% block body %}
+    {% endblock %}
+</div>
 {% include "/fragments/_footer.html.twig" %}
 </body>
 </html>

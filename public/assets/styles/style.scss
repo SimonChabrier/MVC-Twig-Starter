@@ -1,0 +1,28 @@
+@import '_typo';
+@import '_colors';
+
+//set layout
+body {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.main {
+    padding: 0 1rem;
+    color: $color-primary-black;
+}
+
+.footer, .header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color : $color-primary-black;
+
+    &--title{
+        color : $color-primary-white;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 1rem 0;
+    }
+}

@@ -218,7 +218,7 @@ class User extends CoreModel {
         $query = $pdo->prepare('SELECT * FROM users');
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_CLASS, self::class);
-        dump($result);
+      
         return $result;
     }
 
