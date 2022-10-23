@@ -1,4 +1,4 @@
-## MVC Architechtural Pattern
+## MVC Architectural Pattern
 
 - implements twig as template engine
 - implements symfonyRouter
