@@ -102,12 +102,7 @@ class HomeController extends CoreController{
             ];
         }
         
-        $response = new Response();
-        $response->setContent(json_encode([
-            'data' => $data
-        ]));
-        
-        $response->headers->set('Content-Type', 'application/json');
+        $response = new JsonResponse(['users' => $data]);
         return $response->send();
     }
 }
