@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\User;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class HomeController extends CoreController{
@@ -83,4 +85,29 @@ class HomeController extends CoreController{
 
     }    
 
+    public function json()
+    {
+        $users = $this->user->findAll();
+
+        foreach ($users as $user) {
+
+            $data[] = [
+                'id' => $user->getId(),
+                'firstname' => $user->getFirstname(),
+                'lastname' => $user->getLastname(),
+                'username' => $user->getUsername(),
+                'email' => $user->getEmail(),
+                'password' => $user->getPassword(),
+                'role' => $user->getRole(),
+            ];
+        }
+        
+        $response = new Response();
+        $response->setContent(json_encode([
+            'data' => $data
+        ]));
+        
+        $response->headers->set('Content-Type', 'application/json');
+        return $response->send();
+    }
 }

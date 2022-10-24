@@ -45,6 +45,13 @@ abstract class Routes
 
         $routes->add('main_update', $route);
 
+        $route = new Route('/json', [
+            '_controller' => HomeController::class,
+            '_method' => 'json'
+        ]);
+
+        $routes->add('main_json', $route);
+
         return $routes;
     }
 }
