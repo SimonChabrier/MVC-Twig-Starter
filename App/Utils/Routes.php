@@ -24,12 +24,12 @@ abstract class Routes
 
         $routes->add('main_home', $route);
 
-        $route = new Route('/create', [
+        $route = new Route('/new', [
             '_controller' => HomeController::class,
-            '_method' => 'create'
+            '_method' => 'new'
         ]);
 
-        $routes->add('main_create', $route);
+        $routes->add('main_new', $route);
 
 
         $route = new Route('/delete/{id}', [

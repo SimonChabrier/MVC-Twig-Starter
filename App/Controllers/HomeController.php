@@ -34,7 +34,7 @@ class HomeController extends CoreController{
      * Display create page
      * @return void
      */
-    public function create()
+    public function new()
     {
         $user = new User();
     
@@ -47,10 +47,8 @@ class HomeController extends CoreController{
        
         ->save();
         
-        header('Location: /');
-        exit();
-        // $response = new RedirectResponse('/', 301);
-        // return $response->send();
+        $response = new RedirectResponse('/', 302);
+        return $response->send();
     }
 
     /**
@@ -58,14 +56,15 @@ class HomeController extends CoreController{
      * Display update page
      * @return void
      */
-    public function delete (array $params) 
+    public function delete(array $params) 
     {
 
         $this->user->findById($params['id']);
         $this->user->delete($params['id']);
 
-        $response = new RedirectResponse('/', 301);
+        $response = new RedirectResponse('/', 302);
         return $response->send();
+        exit();
     }
 
     /**
@@ -73,7 +72,7 @@ class HomeController extends CoreController{
      * Display update page
      * @return void
      */
-    public function update (array $params) 
+    public function update(array $params) 
     {
 
         $this->user->findById($params['id'])
@@ -87,8 +86,9 @@ class HomeController extends CoreController{
 
         ->update($params['id']);
 
-        $response = new RedirectResponse('/', 301);
+        $response = new RedirectResponse('/', 302);
         return $response->send();
+        exit();
 
     }    
 
@@ -114,6 +114,7 @@ class HomeController extends CoreController{
         
         $response = new JsonResponse(['users' => $users]);
         return $response->send();
+        exit();
     }
 
     /**
@@ -137,5 +138,6 @@ class HomeController extends CoreController{
 
         $response = new JsonResponse(['user' => $user]);
         return $response->send();
+        exit();
     }
 }

@@ -32,7 +32,7 @@ composer update
 ## 4/ Try those routes to test the App
 
 - `/`
-- `/create`
+- `/new`
 - `/delete/{id}`
 - `/update/{id}`
 - `/json`
