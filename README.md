@@ -13,7 +13,7 @@ composer update
 
 `make your database`
 
-`import database.sql`
+`import file : database.sql`
 
 ## Try those routes to test the App
 
