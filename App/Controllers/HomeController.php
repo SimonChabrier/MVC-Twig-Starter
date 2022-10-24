@@ -85,6 +85,10 @@ class HomeController extends CoreController{
 
     }    
 
+    /**
+     * Display json page
+     * @return void
+     */
     public function json()
     {
         foreach ($this->user->findAll() as $user) {
