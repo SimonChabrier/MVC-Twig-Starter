@@ -47,10 +47,17 @@ abstract class Routes
 
         $route = new Route('/json', [
             '_controller' => HomeController::class,
-            '_method' => 'json'
+            '_method' => 'jsonAllUsers'
         ]);
 
-        $routes->add('main_json', $route);
+        $routes->add('main_users_json', $route);
+
+        $route = new Route('/json/{id}', [
+            '_controller' => HomeController::class,
+            '_method' => 'jsonUser'
+        ]);
+
+        $routes->add('main_user_json', $route);
 
         return $routes;
     }

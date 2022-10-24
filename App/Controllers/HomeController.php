@@ -89,7 +89,7 @@ class HomeController extends CoreController{
      * Display json page
      * @return void
      */
-    public function json()
+    public function jsonAllUsers()
     {
         foreach ($this->user->findAll() as $user) {
 
@@ -105,6 +105,24 @@ class HomeController extends CoreController{
         }
         
         $response = new JsonResponse(['users' => $users]);
+        return $response->send();
+    }
+
+    public function jsonUser(array $params)
+    {
+        $user = $this->user->findById($params['id']);
+
+        $user = [
+            'id' => $user->getId(),
+            'firstname' => $user->getFirstname(),
+            'lastname' => $user->getLastname(),
+            'username' => $user->getUsername(),
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword(),
+            'role' => $user->getRole(),
+        ];
+
+        $response = new JsonResponse(['user' => $user]);
         return $response->send();
     }
 }
