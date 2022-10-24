@@ -17,12 +17,12 @@ composer update
 
 ## Try those routes to test the App
 
-`/`
-`/create`
-`/delete/{id}`
-`/update/{id}`
-`/json`
-`/json/{id}`
+- `/`
+- `/create`
+- `/delete/{id}`
+- `/update/{id}`
+- `/json`
+- `/json/{id}`
 
 ## start local php server
 
