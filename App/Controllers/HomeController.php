@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\User;
-use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
