@@ -47,8 +47,10 @@ class HomeController extends CoreController{
        
         ->save();
         
-        $response = new RedirectResponse('/', 301);
-        return $response->send();
+        header('Location: /');
+        exit();
+        // $response = new RedirectResponse('/', 301);
+        // return $response->send();
     }
 
     /**

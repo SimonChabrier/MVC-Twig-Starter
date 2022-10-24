@@ -31,6 +31,7 @@ abstract class Routes
 
         $routes->add('main_create', $route);
 
+
         $route = new Route('/delete/{id}', [
             '_controller' => HomeController::class,
             '_method' => 'delete'
