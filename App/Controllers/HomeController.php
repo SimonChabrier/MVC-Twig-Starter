@@ -6,6 +6,7 @@ use App\Models\User;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
+
 class HomeController extends CoreController{
 
     public function __construct() 
@@ -43,7 +44,7 @@ class HomeController extends CoreController{
         ->setRole('ROLE_USER')
         ->save();
 
-        $response = new RedirectResponse('/', 302);
+        $response = new RedirectResponse('/', 301);
         return $response->send();
 
     }
@@ -58,7 +59,7 @@ class HomeController extends CoreController{
         $this->user->findById($params['id']);
         $this->user->delete($params['id']);
 
-        $response = new RedirectResponse('/', 302);
+        $response = new RedirectResponse('/', 301);
         return $response->send();
     }
 
@@ -80,7 +81,7 @@ class HomeController extends CoreController{
 
         ->update($params['id']);
 
-        $response = new RedirectResponse('/', 302);
+        $response = new RedirectResponse('/', 301);
         return $response->send();
 
     }    
