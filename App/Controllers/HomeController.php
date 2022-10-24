@@ -30,7 +30,7 @@ class HomeController extends CoreController{
     }
 
     /**
-     * route /create
+     * route /new
      * Display create page
      * @return void
      */
