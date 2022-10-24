@@ -11,9 +11,11 @@
 composer update
 ```
 
-`make your database`
+`make a database in phpMyAdmin`
 
 `import file : database.sql`
+
+`configure file : config.ini`
 
 ## start local php server
 
