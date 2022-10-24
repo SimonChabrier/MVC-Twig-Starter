@@ -86,8 +86,8 @@ class HomeController extends CoreController{
     }    
 
     /**
-     * Display json page
-     * @return void
+     * Send json users
+     * @return json
      */
     public function jsonAllUsers()
     {
@@ -108,6 +108,10 @@ class HomeController extends CoreController{
         return $response->send();
     }
 
+    /**
+     * Send json user
+     * @return json
+     */
     public function jsonUser(array $params)
     {
         $user = $this->user->findById($params['id']);
