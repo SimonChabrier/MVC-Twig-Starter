@@ -5,7 +5,7 @@
 - implements PDO in singletone design pattern (current in use)
 - implements MySqli in singletone design pattern (to try it)
 
-## Install
+## 1/ Install
 
 ```
 composer update
@@ -19,15 +19,15 @@ composer update
 
 `add extension in VSCode : Live Sass Compiler`
 
-## start local php server
+## 2/ start local php server
 
  `php -S 0.0.0.0:8080 -t public`
 
-## display App
+## 3/ display App
 
 `http://0.0.0.0:8080`
 
-## Try those routes to test the App
+## 4/ Try those routes to test the App
 
 - `/`
 - `/create`
