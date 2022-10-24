@@ -1,6 +1,6 @@
 ## MVC Architectural Pattern
 
-- implements twig as template engine
+- implements Twig as template engine
 - implements symfonyRouter
 - implements PDO in singletone design pattern (current in use)
 - implements MySqli in singletone design pattern (to try it)
