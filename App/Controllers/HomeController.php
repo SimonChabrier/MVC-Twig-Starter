@@ -87,11 +87,9 @@ class HomeController extends CoreController{
 
     public function json()
     {
-        $users = $this->user->findAll();
+        foreach ($this->user->findAll() as $user) {
 
-        foreach ($users as $user) {
-
-            $data[] = [
+            $users[] = [
                 'id' => $user->getId(),
                 'firstname' => $user->getFirstname(),
                 'lastname' => $user->getLastname(),
@@ -102,7 +100,7 @@ class HomeController extends CoreController{
             ];
         }
         
-        $response = new JsonResponse(['users' => $data]);
+        $response = new JsonResponse(['users' => $users]);
         return $response->send();
     }
 }
