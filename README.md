@@ -2,8 +2,8 @@
 
 - implements twig as template engine
 - implements symfonyRouter
-- implements PDO in singletone design pattern
-- implements MySqli in singletone design pattern
+- implements PDO in singletone design pattern (current in use)
+- implements MySqli in singletone design pattern (for try it)
 
 ## Install
 
