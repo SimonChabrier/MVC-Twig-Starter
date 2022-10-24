@@ -15,6 +15,10 @@ composer update
 
 `import file : database.sql`
 
+## start local php server
+
+ `php -S 0.0.0.0:8080 -t public`
+
 ## Try those routes to test the App
 
 - `/`
@@ -24,6 +28,4 @@ composer update
 - `/json`
 - `/json/{id}`
 
-## start local php server
-
- `php -S 0.0.0.0:8080 -t public` 
+ 
