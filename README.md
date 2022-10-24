@@ -23,6 +23,10 @@ composer update
 
  `php -S 0.0.0.0:8080 -t public`
 
+## display App
+
+`http://0.0.0.0:8080`
+
 ## Try those routes to test the App
 
 - `/`
