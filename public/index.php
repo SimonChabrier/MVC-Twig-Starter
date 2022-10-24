@@ -7,6 +7,7 @@ use App\Utils\Routes;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\Generator\UrlGenerator;
+// manage 404
 use App\Controllers\ErrorController;
 
 define ('ROOT', dirname(__DIR__));
