@@ -17,6 +17,7 @@ class HomeController extends CoreController{
 
 
     /**
+     * route /
      * Display home page
      * @return User
      */
@@ -29,14 +30,14 @@ class HomeController extends CoreController{
     }
 
     /**
+     * route /create
      * Display create page
      * @return void
      */
     public function create()
     {
-
         $user = new User();
-
+    
         $user->setFirstname('John')
         ->setLastname('Doe')
         ->setUsername('johndoe')
@@ -48,10 +49,10 @@ class HomeController extends CoreController{
         
         $response = new RedirectResponse('/', 301);
         return $response->send();
-
     }
 
     /**
+     * route /delete/{id}
      * Display update page
      * @return void
      */
@@ -66,6 +67,7 @@ class HomeController extends CoreController{
     }
 
     /**
+     * route /update/{id}
      * Display update page
      * @return void
      */
@@ -89,6 +91,7 @@ class HomeController extends CoreController{
     }    
 
     /**
+     * route /json
      * Send json users
      * @return json
      */
@@ -112,6 +115,7 @@ class HomeController extends CoreController{
     }
 
     /**
+     * route /json/{id}
      * Send json user
      * @return json
      */

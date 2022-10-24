@@ -227,9 +227,8 @@ class User extends CoreModel {
         $pdo = PdoConnect::getPDO();
 
         $query = $pdo->prepare(
-            
-            'INSERT INTO `users` (`firstname`, `lastname`, `username`, `email`, `password`, `role`) 
-            VALUES (:firstname, :lastname, :username, :email, :password, :role)'
+                "INSERT INTO `users` (firstname, lastname, username, email, password, role) 
+                VALUES (:firstname, :lastname, :username, :email, :password, :role)"
             );
     
             $query->bindValue(':firstname', $this->firstname);
@@ -239,7 +238,7 @@ class User extends CoreModel {
             $query->bindValue(':password', $this->password);
             $query->bindValue(':role', $this->role);
             
-    
+        
             $query->execute();
     
             $this->id = $pdo->lastInsertId();
@@ -262,6 +261,7 @@ class User extends CoreModel {
         $query->bindValue(':password', $this->password);
         $query->bindValue(':role', $this->role);
         $query->bindValue(':id', $id);
+        
         $query->execute();
 
         return $this;

@@ -27,7 +27,7 @@ try {
     $method = $parameters['_method'];
     
     $generator = new UrlGenerator($routes, $context);
-
+   
     $controllerInstance = new $controller($generator);
     //$parameter for id in url
     $controllerInstance->$method($parameters);
