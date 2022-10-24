@@ -31,7 +31,7 @@ try {
     $controllerInstance = new $controller($generator);
     //$parameter for id in url
     $controllerInstance->$method($parameters);
-
+  
     } catch (Exception $exception) {
 
         http_response_code($exception->getCode());

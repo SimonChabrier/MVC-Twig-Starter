@@ -223,22 +223,29 @@ class User extends CoreModel {
     }
 
     public function save(){
-        
+
         $pdo = PdoConnect::getPDO();
 
-        $query = $pdo->prepare('INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `role`) 
-        VALUES (NULL, :firstname, :lastname, :username, :email, :password, :role)');
-        $query->bindValue(':firstname', $this->firstname);
-        $query->bindValue(':lastname', $this->lastname);
-        $query->bindValue(':username', $this->username);
-        $query->bindValue(':email', $this->email);
-        $query->bindValue(':password', $this->password);
-        $query->bindValue(':role', $this->role);
+        $query = $pdo->prepare(
+            
+            'INSERT INTO `users` (`firstname`, `lastname`, `username`, `email`, `password`, `role`) 
+            VALUES (:firstname, :lastname, :username, :email, :password, :role)'
+            );
+    
+            $query->bindValue(':firstname', $this->firstname);
+            $query->bindValue(':lastname', $this->lastname);
+            $query->bindValue(':username', $this->username);
+            $query->bindValue(':email', $this->email);
+            $query->bindValue(':password', $this->password);
+            $query->bindValue(':role', $this->role);
+            
+    
+            $query->execute();
+    
+            $this->id = $pdo->lastInsertId();
+            return $this;
+       
         
-        $query->execute();
-
-        $this->id = $pdo->lastInsertId();
-        return $this;
 
     }
 

@@ -23,7 +23,7 @@ class HomeController extends CoreController{
     public function home()
     {
         $users = $this->user->findAll();
-        $user = $this->user->findById(1);
+        $user = $this->user->findById(3);
 
         echo $this->twig->render('home/index.html.twig', compact('users', 'user')); 
     }
@@ -35,16 +35,17 @@ class HomeController extends CoreController{
     public function create()
     {
 
-        $this->user
+        $user = new User();
 
-        ->setFirstname('Jean')
-        ->setLastname('Claude')
-        ->setUsername('jeanclaude')
+        $user->setFirstname('John')
+        ->setLastname('Doe')
+        ->setUsername('johndoe')
         ->setEmail('user@user.fr')
         ->setPassword(password_hash('password', PASSWORD_DEFAULT))
         ->setRole('ROLE_USER')
+       
         ->save();
-
+        
         $response = new RedirectResponse('/', 301);
         return $response->send();
 
