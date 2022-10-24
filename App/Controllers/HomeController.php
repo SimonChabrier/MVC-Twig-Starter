@@ -15,6 +15,7 @@ class HomeController extends CoreController{
         $this->user = new User();
     }
 
+
     /**
      * Display home page
      * @return User
@@ -90,7 +91,7 @@ class HomeController extends CoreController{
      * Send json users
      * @return json
      */
-    public function jsonAllUsers()
+    public function sendJsonUsers()
     {
         foreach ($this->user->findAll() as $user) {
 
@@ -113,7 +114,7 @@ class HomeController extends CoreController{
      * Send json user
      * @return json
      */
-    public function jsonUser(array $params)
+    public function sendJsonUser(array $params)
     {
         $user = $this->user->findById($params['id']);
 
