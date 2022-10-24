@@ -2,6 +2,8 @@
 
 - implements Twig as template engine
 - implements symfonyRouter
+- implements Http Foundation
+- implements symfony Var Dumper
 - implements PDO in singletone design pattern (current in use)
 - implements MySqli in singletone design pattern (to try it)
 
