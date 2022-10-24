@@ -41,7 +41,7 @@ class HomeController extends CoreController{
         ->setLastname('Claude')
         ->setUsername('jeanclaude')
         ->setEmail('user@user.fr')
-        ->setPassword('password')
+        ->setPassword(password_hash('password', PASSWORD_DEFAULT))
         ->setRole('ROLE_USER')
         ->save();
 
@@ -77,7 +77,7 @@ class HomeController extends CoreController{
         ->setLastname('Claude2')
         ->setUsername('jeanclaude2')
         ->setEmail('user@user.fr')
-        ->setPassword('password')
+        ->setPassword(password_hash('password', PASSWORD_DEFAULT))
         ->setRole('ROLE_USER')
 
         ->update($params['id']);
