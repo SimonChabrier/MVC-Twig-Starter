@@ -2,10 +2,9 @@
 
 namespace App\Controllers;
 use App\Models\User;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class HomeController extends CoreController{
-
-    private $user;
 
     public function __construct() 
     {
@@ -32,17 +31,18 @@ class HomeController extends CoreController{
     public function create()
     {
 
-        $user = new User();
-        $user->setFirstname('Jean');
-        $user->setLastname('Claude');
-        $user->setUsername('jeanclaude');
-        $user->setEmail('user@user.fr');
-        $user->setPassword('password');
-        $user->setRole('ROLE_USER');
-        $user->save();
+        $this->user
 
-        return header('Location: /');
-        exit;
+        ->setFirstname('Jean')
+        ->setLastname('Claude')
+        ->setUsername('jeanclaude')
+        ->setEmail('user@user.fr')
+        ->setPassword('password')
+        ->setRole('ROLE_USER')
+        ->save();
+
+        $response = new RedirectResponse('/', 302);
+        return $response->send();
 
     }
 
@@ -53,11 +53,11 @@ class HomeController extends CoreController{
     public function delete (array $params) 
     {
 
-        $user = $this->user->findById($params['id']);
-        $user->delete($params['id']);
+        $this->user->findById($params['id']);
+        $this->user->delete($params['id']);
 
-        return header('Location: /');
-        exit;
+        $response = new RedirectResponse('/', 302);
+        return $response->send();
     }
 
     /**
@@ -67,19 +67,19 @@ class HomeController extends CoreController{
     public function update (array $params) 
     {
 
-        $user = $this->user->findById($params['id']);
-        
-        $user->setFirstname('Jean2');
-        $user->setLastname('Claude2');
-        $user->setUsername('jeanclaude2');
-        $user->setEmail('user@user.fr');
-        $user->setPassword('password');
-        $user->setRole('ROLE_USER');
+        $this->user->findById($params['id'])
 
-        $user->update($params['id']);
+        ->setFirstname('Jean2')
+        ->setLastname('Claude2')
+        ->setUsername('jeanclaude2')
+        ->setEmail('user@user.fr')
+        ->setPassword('password')
+        ->setRole('ROLE_USER')
 
-        return header('Location: /');
-        exit;
+        ->update($params['id']);
+
+        $response = new RedirectResponse('/', 302);
+        return $response->send();
 
     }    
 
