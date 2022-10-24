@@ -17,6 +17,8 @@ composer update
 
 `configure file : config.ini`
 
+`add Live Sass Compiler extension in VSCode`
+
 ## start local php server
 
  `php -S 0.0.0.0:8080 -t public`
