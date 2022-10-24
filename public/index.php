@@ -7,6 +7,7 @@ use App\Utils\Routes;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\Generator\UrlGenerator;
+use App\Controllers\ErrorController;
 
 define ('ROOT', dirname(__DIR__));
 
@@ -33,8 +34,10 @@ try {
     $controllerInstance->$method($parameters);
   
     } catch (Exception $exception) {
+        
+        if(str_contains($exception->getMessage(), 'No routes found for')) {
+            $controller = new ErrorController();
+            $controller->error404();
+        }
 
-        http_response_code($exception->getCode());
-        echo $exception->getMessage();
-        exit;
     }
