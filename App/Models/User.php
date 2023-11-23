@@ -6,7 +6,6 @@ use PDO;
 use DateTime;
 class User extends CoreModel {
 
-
     private int $id;
     private string $firstname;
     private string $lastname;
@@ -17,7 +16,6 @@ class User extends CoreModel {
     private $created_at;
     private $updated_at;
 
-    
     /**
      * Get the value of id
      */ 
@@ -25,16 +23,13 @@ class User extends CoreModel {
     {
         return $this->id;
     }
-
     /**
      * Set the value of id
-     *
      * @return  self
      */ 
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -45,16 +40,13 @@ class User extends CoreModel {
     {
         return $this->firstname;
     }
-
     /**
      * Set the value of firstname
-     *
      * @return  self
      */ 
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
-
         return $this;
     }
 
@@ -238,14 +230,10 @@ class User extends CoreModel {
             $query->bindValue(':password', $this->password);
             $query->bindValue(':role', $this->role);
             
-        
             $query->execute();
     
             $this->id = $pdo->lastInsertId();
             return $this;
-       
-        
-
     }
 
     public function update(int $id) {

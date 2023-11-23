@@ -38,7 +38,6 @@ class PdoConnect
      */
     public static function getPDO()
     {
-
         if (empty(self::$_instance)) {
             self::$_instance = new PdoConnect();
         }

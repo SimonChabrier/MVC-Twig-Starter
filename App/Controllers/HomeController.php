@@ -22,7 +22,7 @@ class HomeController extends CoreController{
      * @return User
      */
     public function home()
-    {
+    {   
         $users = $this->user->findAll();
         $user = $this->user->findById(3);
 
@@ -70,9 +70,9 @@ class HomeController extends CoreController{
     /**
      * route /update/{id}
      * Display update page
-     * @return void
+     * @return Response
      */
-    public function update(array $params) 
+    public function update(array $params) : Response
     {
 
         $this->user->findById($params['id'])
